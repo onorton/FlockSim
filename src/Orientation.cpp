@@ -1,7 +1,7 @@
 #include "Orientation.h"
 Orientation::Orientation(float velocity, float bearing) {
-    _velocity = velocity;
-    _bearing = bearing;
+    this->velocity = velocity;
+    this->bearing = bearing;
 
 }
 

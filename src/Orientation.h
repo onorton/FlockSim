@@ -1,8 +1,8 @@
 #ifndef ORIENTATION_H
 #define ORIENTATION_H
 class Orientation {
-    float _velocity;
-    float _bearing;
+    float velocity;
+    float bearing;
 public:
     Orientation(float velocity, float bearing);
     float getVelocity();
