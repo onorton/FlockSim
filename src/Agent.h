@@ -8,6 +8,7 @@ class Agent {
     Position* position;
 public:
     Agent(Orientation* orientation, Position* position);
+	~Agent();
     void updateOrientation();
     void updatePosition();
     //Flocking rules also go here

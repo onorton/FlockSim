@@ -10,6 +10,7 @@ class World {
 
 public:
   World(int width, int height, std::vector<Agent*> agents);
+  ~World();
   void updateAgents();
   void drawWorld();
 };
