@@ -1,9 +1,9 @@
-int main() {
+#include "World.h"
+#include "Agent.h"
+
+int main(argv) {
     
-    //Create 
-    
-    //
-    
+    //Create World and agents
     
     //Main loop
     while(true) {
