@@ -15,7 +15,7 @@ World::~World() {
 void World::updateAgents() {
 //Update orientations and then update positions
     for (Agent* a : agents) {
-        a->updateOrientation();
+        a->updateOrientation(agents);
     }
    
     for (Agent* a : agents) {
@@ -26,14 +26,20 @@ void World::updateAgents() {
 void World::drawWorld() {
 //Draws the world including the agents
    for (int h = 0; h < height; h++) {
-        for (int w = 0; w < width; w++) {
-   	    for (Agent* a : agents) {
-   	    	if (a->getPosition.getX() == w && a->getPosition.getY())
-   	    	    std::cout << '@';
-   	    	else 
-   	    	    std::cout << ' ';
-   	    }	
+       for (int w = 0; w < width; w++) {
+           bool agent = false;
+   	   for (Agent* a : agents) {
+   	       if (a->getPosition().getX() == w && a->getPosition().getY() == h)
+                   agent = true;
+   	   }
+             
+	   if (agent) 
+               std::cout << '@';
+           else
+               std::cout << ' ';
    	}
+        std::cout << '\n';
+       
    }
 
 }

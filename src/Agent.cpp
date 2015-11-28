@@ -4,11 +4,15 @@ Agent::Agent(Orientation* orientation, Position* position) {
     this->position = position;
 }
 Agent::~Agent() {
-	delete orientation;
-	delete position;
+    delete orientation;
+    delete position;
 }
 
-void Agent::updateOrientation() {
+Position Agent::getPosition() {
+    return *position;
+}
+
+void Agent::updateOrientation(std::vector<Agent*> agents) {
 //Uses results of rules to update its orientation
 }
 
