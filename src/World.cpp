@@ -1,9 +1,11 @@
 #include "World.h"
 #include <iostream>
-World::World(int width, int height, std::vector<Agent*> agents) {
+#include <stdlib.h>    
+World::World(int width, int height, int numAgents) {
   this->width = width;
   this->height = height;
-  this->agents = agents;
+  this->numAgents = numAgents;
+  this->agents = createAgents();
 }
 
 World::~World() {
@@ -25,6 +27,8 @@ void World::updateAgents() {
 
 void World::drawWorld() {
 //Draws the world including the agents
+   std::cout << "Epoch: " << epoch;
+   epoch++;
    for (int h = 0; h < height; h++) {
        for (int w = 0; w < width; w++) {
            bool agent = false;
@@ -41,6 +45,24 @@ void World::drawWorld() {
         std::cout << '\n';
        
    }
+
+
+}
+
+std::vector<Agent*> World::createAgents() {
+    std::vector<Agent*> agents;
+
+    for (int i = 0; i < numAgents; i++) {
+	int x = rand() % width;
+        int y = rand() % height;
+        Position* position = new Position(x, y);
+        Orientation* orientation = new Orientation(1, 0);
+        agents.push_back(new Agent(orientation, position));
+
+    }
+  
+
+    return agents;  
 
 }
 

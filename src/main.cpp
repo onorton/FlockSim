@@ -4,8 +4,8 @@
 int main() {
     
     //Create World and agents
-    std::vector<Agent*> agents;
-    World world(50, 50, agents);
+    World world(50, 50, 10);
+
     //Main loop
     while(true) {
         world.updateAgents();
