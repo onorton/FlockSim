@@ -7,13 +7,14 @@
 class Agent {
     Orientation* orientation;
     Position* position;
+    //Flocking rules go here
+
 public:
     Agent(Orientation* orientation, Position* position);
     ~Agent();
     Position getPosition();
     void updateOrientation(std::vector<Agent*> agents);
     void updatePosition();
-    //Flocking rules also go here
 
 };
 #endif

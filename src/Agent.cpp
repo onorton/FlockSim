@@ -1,4 +1,6 @@
+#include <math.h>
 #include "Agent.h"
+
 Agent::Agent(Orientation* orientation, Position* position) {
     this->orientation = orientation;
     this->position = position;
@@ -18,4 +20,10 @@ void Agent::updateOrientation(std::vector<Agent*> agents) {
 
 void Agent::updatePosition() {
 //Uses current position and orientation to update its position
+    int x = orientation->getVelocity() * sin(orientation->getBearing());
+    int y = orientation->getVelocity() * cos(orientation->getBearing());
+    position->setX(position->getX() + x);
+    position->setY(position->getY() + y);
+ 
+    
 }
