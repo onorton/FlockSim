@@ -10,6 +10,7 @@ int main() {
     while(true) {
         world.updateAgents();
         world.drawWorld();
+        sleep(1);
     }
     
     return 0;
