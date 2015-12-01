@@ -29,7 +29,7 @@ void World::drawWorld() {
 //Draws the world including the agents
    std::cout << "Epoch: " << epoch;
    epoch++;
-   for (int h = 0; h < height; h++) {
+   for (int h = height-1; h >= 0; h--) {
        for (int w = 0; w < width; w++) {
            bool agent = false;
    	   for (Agent* a : agents) {
