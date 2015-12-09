@@ -2,6 +2,8 @@
 #include "Agent.h"
 #include <unistd.h>
 
+#define INTERVAL 500000
+
 int main() {
     
     //Create World and agents
@@ -11,7 +13,7 @@ int main() {
     while(true) {
         world.updateAgents();
         world.drawWorld();
-	usleep(500000);
+	usleep(INTERVAL);
     }
     
     return 0;
