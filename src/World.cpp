@@ -33,8 +33,7 @@ void World::drawWorld() {
        for (int w = 0; w < width; w++) {
            bool agent = false;
    	   for (Agent* a : agents) {
-           //    std::cout << a->getOrientation().getBearing();
-   	       if (a->getPosition().getX() == w && a->getPosition().getY() == h)
+   	       if ((int)a->getPosition().getX() == w && (int)a->getPosition().getY() == h)
                    agent = true;
    	   }
              

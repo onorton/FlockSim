@@ -28,8 +28,8 @@ void Agent::updateOrientation(std::vector<Agent*> agents) {
 
 void Agent::updatePosition() {
 //Uses current position and orientation to update its position
-    int x = orientation->getVelocity() * sin(orientation->getBearing());
-    int y = orientation->getVelocity() * cos(orientation->getBearing());
+    float x = orientation->getVelocity() * sin(orientation->getBearing());
+    float y = orientation->getVelocity() * cos(orientation->getBearing());
     position->setX(position->getX() + x);
     position->setY(position->getY() + y);
  
