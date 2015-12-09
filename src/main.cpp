@@ -1,5 +1,6 @@
 #include "World.h"
 #include "Agent.h"
+#include <unistd.h>
 
 int main() {
     
@@ -10,7 +11,7 @@ int main() {
     while(true) {
         world.updateAgents();
         world.drawWorld();
-        sleep(1);
+	usleep(500000);
     }
     
     return 0;

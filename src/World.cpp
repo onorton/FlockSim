@@ -27,12 +27,13 @@ void World::updateAgents() {
 
 void World::drawWorld() {
 //Draws the world including the agents
-   std::cout << "Epoch: " << epoch;
+   std::cout << "Epoch: " << epoch << "\n";
    epoch++;
    for (int h = height-1; h >= 0; h--) {
        for (int w = 0; w < width; w++) {
            bool agent = false;
    	   for (Agent* a : agents) {
+           //    std::cout << a->getOrientation().getBearing();
    	       if (a->getPosition().getX() == w && a->getPosition().getY() == h)
                    agent = true;
    	   }
@@ -55,8 +56,9 @@ std::vector<Agent*> World::createAgents() {
     for (int i = 0; i < numAgents; i++) {
 	int x = rand() % width;
         int y = rand() % height;
+        int bearing = rand() * 360;
         Position* position = new Position(x, y);
-        Orientation* orientation = new Orientation(1, 0);
+        Orientation* orientation = new Orientation(1, bearing);
         agents.push_back(new Agent(orientation, position));
 
     }

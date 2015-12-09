@@ -2,10 +2,10 @@
 #define ORIENTATION_H
 class Orientation {
     float velocity;
-    float bearing;
+    int bearing;
 public:
-    Orientation(float velocity, float bearing);
+    Orientation(float velocity, int bearing);
     float getVelocity();
-    float getBearing();
+    int getBearing();
 };
 #endif

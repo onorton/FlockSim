@@ -1,5 +1,5 @@
 #include "Orientation.h"
-Orientation::Orientation(float velocity, float bearing) {
+Orientation::Orientation(float velocity, int bearing) {
     this->velocity = velocity;
     this->bearing = bearing;
 
@@ -9,7 +9,7 @@ float Orientation::getVelocity() {
     return velocity;
 }
 
-float Orientation::getBearing() {
+int Orientation::getBearing() {
     return bearing;
 }
 
